@@ -90,3 +90,10 @@ for json_num, json_dir in enumerate(json_path_corr):
     data = json.load(open(json_dir))
     data['imagePath']=str(num_png)+'.png'
     rewrite_json_file(json_dir, data)
+    
+    
+#    这里，我把生成的png文件和原来的json文件（一一对应的）放到了一个新的目录下，目录下的文件为：
+# 1.json、1.png、2.json、2.png…………等等。可以注意到后两段是我自己加的，因为我用的是师兄的旧的数据集，
+# 有的json文件中的ImagePath的链接已经对应不上，而正好我在生成我的dataset时，我是按照文件前缀命名的
+# ，所以，我更改了json文件中的ImagePath内容，使其能对应。如果你的数据不存在这样的问题，注释掉80-92行
+# 即可
